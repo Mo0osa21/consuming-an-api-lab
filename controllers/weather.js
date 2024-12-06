@@ -6,9 +6,9 @@ router.get('/weather', (req, res) => {
 })
 
 router.post('/weather', (req, res) => {
-  const zip = req.body
+  const zip = req.body.zip
   const apiKey = process.env.API_KEY
-  const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=${apiKey}`
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${zip}&APPID=${apiKey}`
 
   axios
     .get(url)
